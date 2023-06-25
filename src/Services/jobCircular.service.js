@@ -10,13 +10,15 @@ exports.postJobCircularService = async (jobCircularData) => {
 
 exports.getJobCircularService = async () => {
     const data = await Circular.find({})
-        .populate("company");
+        .populate("company")
+        .sort('-createdAt')
     return data;
 };
 
 exports.getSingleJobCircularService = async (id) => {
     const data = await Circular.findOne({ _id: id })
-        .populate(['company', 'candidates']);
+   .populate(['company', 'candidates']);
+        
     return data;
 };
 exports.getMyJobCircularService = async (email) => {

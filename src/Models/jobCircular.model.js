@@ -47,6 +47,12 @@ const jobCircularSchema = Mongoose.Schema({
         require: true,
         ref: 'User'
     }
+    ,
+    status: {
+        type: String,
+        default:'pending',
+        enum: ['approved', 'rejected', 'pending']
+    }
 },
     {
         timestamps: true,
