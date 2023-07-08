@@ -16,6 +16,7 @@ const users = require("./Routes/user.route");
 const jobCircular = require("./Routes/jobCircular.route");
 const chat = require("./Routes/Chat.route");
 const message = require("./Routes/message.route");
+const feedbacks = require("./Routes/feedbacks.route");
 
 
 app.get("/", (req, res) => {
@@ -27,6 +28,7 @@ app.use("/api/v1/developer/users", users);
 app.use("/api/v1/developer/jobCircular", jobCircular);
 app.use("/api/v1/developer/chat", chat);
 app.use("/api/v1/developer/message", message);
+app.use("/api/v1/developer/feedbacks", feedbacks);
 
 
 app.use("*", (req, res, nex) => {

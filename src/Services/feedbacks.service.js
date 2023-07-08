@@ -1,11 +1,12 @@
-const Feedbacks = require("../Models/feedbacks.model");
+const Feedback = require("../Models/feedbacks.model");
+
 
 
 exports.postFeedbacksService = async (massage) => {
-    const data = await Feedbacks.create(massage);
+    const data = await Feedback.create(massage);
     return data;
 };
 exports.getFeedbacksService = async () => {
-    const data = await Feedbacks.find({}).sort('-createdAt');
+    const data = await Feedback.find({}).sort('-createdAt');
     return data;
 };
